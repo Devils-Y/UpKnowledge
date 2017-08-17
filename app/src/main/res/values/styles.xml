@@ -1,0 +1,37 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+     <style name="NoActionBarTheme" parent="Theme.AppCompat.Light.NoActionBar">
+          <item name="android:windowIsTranslucent">true</item>／／变透明
+          <item name="android:windowBackground">@android:color/transparent</item>／／背景颜色为透明
+          <item name="windowActionBar">false</item>／／去掉ActionBar
+          <item name="android:windowNoTitle">true</item>／／去掉标题
+          <item name="android:windowContentTransitions" tools:targetApi="lollipop">true</item>
+     </style>
+
+     <style name="ToolbarPopupTheme" parent="@style/ThemeOverlay.AppCompat.Light">
+          <!--<item name="android:colorBackground">#000000</item> 也可以设置背景色以及menu中的其他属性-->
+          <item name="actionOverflowMenuStyle">@style/OverflowMenuStyle</item>
+     </style>
+
+     <style name="OverflowMenuStyle" parent="Widget.AppCompat.Light.PopupMenu.Overflow">
+          <item name="overlapAnchor">false</item>  <!--设置不覆盖锚点-->
+     </style>
+
+     <style name="ProgressDialog" parent="@android:style/Theme.Holo.Light.Dialog">
+          <item name="android:windowBackground">@android:color/transparent</item>
+          <item name="android:windowAnimationStyle">@android:style/Animation.Dialog</item>
+          <item name="android:windowNoTitle">true</item>／／去掉标题
+     </style>
+
+     <style name="CustomTabLayout" parent="Widget.Design.TabLayout">
+          <item name="tabIndicatorColor">@color/black</item>
+          <item name="tabSelectedTextColor">@color/black</item>
+          <item name="textAllCaps">true</item>
+     </style>
+
+     <style name="MyCustomTextAppearance" parent="TextAppearance.Design.Tab">
+          <item name="textAllCaps">false</item>
+          <item name="android:textAllCaps">false</item>
+     </style>
+
+</resources>

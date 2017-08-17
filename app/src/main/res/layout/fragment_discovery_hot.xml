@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.v4.widget.NestedScrollView
+     xmlns:android="http://schemas.android.com/apk/res/android"
+     android:id="@+id/NScrollView"
+     android:layout_width="match_parent"
+     android:layout_height="match_parent"
+     android:background="@color/hint_of_red"
+     android:focusable="true"
+     android:focusableInTouchMode="true">
+
+     <LinearLayout
+          xmlns:android="http://schemas.android.com/apk/res/android"
+          android:layout_width="match_parent"
+          android:layout_height="match_parent"
+          android:orientation="vertical">
+
+          <ImageView
+               android:id="@+id/banner"
+               android:layout_width="match_parent"
+               android:layout_height="180dp"
+               android:background="@color/iron"/>
+
+          <TextView
+               android:id="@+id/recentlyPopular"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:background="@color/white"
+               android:gravity="center"
+               android:padding="15dp"
+               android:text="@string/recently_popular_txt"
+               android:textSize="15sp"
+               android:textStyle="bold"/>
+
+          <android.support.v7.widget.RecyclerView
+               android:id="@+id/hotRecyclerView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/white"/>
+
+          <TextView
+               android:id="@+id/squareCardColl"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:background="@color/white"
+               android:gravity="center"
+               android:padding="15dp"
+               android:text="@string/popular_ranking_txt"
+               android:textSize="15sp"
+               android:textStyle="bold"/>
+
+          <android.support.v7.widget.RecyclerView
+               android:id="@+id/cardCollRecyclerView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/white"/>
+
+          <TextView
+               android:id="@+id/latestRelease"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:layout_marginTop="5dp"
+               android:background="@color/white"
+               android:gravity="center"
+               android:padding="15dp"
+               android:text="@string/latest_release_txt"
+               android:textSize="15sp"
+               android:textStyle="bold"/>
+
+          <android.support.v7.widget.RecyclerView
+               android:id="@+id/releaseRecyclerView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/white"/>
+
+
+     </LinearLayout>
+</android.support.v4.widget.NestedScrollView>

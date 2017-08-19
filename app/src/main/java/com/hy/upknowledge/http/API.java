@@ -2,6 +2,7 @@ package com.hy.upknowledge.http;
 
 import com.hy.upknowledge.SelectedResult;
 import com.hy.upknowledge.discovery.DiscoveryResult;
+import com.hy.upknowledge.discovery.author.DiscoveryAuthorResult;
 import com.hy.upknowledge.discovery.category.DiscoveryCategoryResult;
 import com.hy.upknowledge.discovery.hot.DiscoveryHotResult;
 
@@ -53,7 +54,17 @@ public class API {
      public interface DiscoveryCategoryService {
           @GET
           Flowable<DiscoveryCategoryResult> getDiscoveryCategory(@Url String url,
-                                                            @Query("start") int start,
-                                                            @Query("num") int num);
+                                                                 @Query("start") int start,
+                                                                 @Query("num") int num);
+     }
+
+     /**
+      * 动态获取发现中的'作者'
+      */
+     public interface DiscoveryAuthorService {
+          @GET
+          Flowable<DiscoveryAuthorResult> getDiscoveryAuthor(@Url String url,
+                                                             @Query("start") int start,
+                                                             @Query("num") int num);
      }
 }

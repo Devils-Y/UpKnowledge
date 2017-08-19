@@ -8,14 +8,14 @@ import android.widget.TextView;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
+import com.hy.upknowledge.bean.ActionCardBean;
+import com.hy.upknowledge.bean.HorizontalScrollCardBean;
+import com.hy.upknowledge.bean.HotVideoBean;
+import com.hy.upknowledge.bean.SquareCardBean;
+import com.hy.upknowledge.bean.SquareCardCollBean;
 import com.hy.upknowledge.discovery.hot.DiscoveryHotPresenter;
 import com.hy.upknowledge.discovery.hot.DiscoveryHotResult;
 import com.hy.upknowledge.discovery.hot.DiscoveryHotView;
-import com.hy.upknowledge.discovery.hot.bean.ActionCardBean;
-import com.hy.upknowledge.discovery.hot.bean.HorizontalScrollCardBean;
-import com.hy.upknowledge.discovery.hot.bean.HotVideoBean;
-import com.hy.upknowledge.discovery.hot.bean.SquareCardBean;
-import com.hy.upknowledge.discovery.hot.bean.SquareCardCollBean;
 import com.hy.upknowledge.quickopen.base.BaseFragment;
 import com.hy.upknowledge.quickopen.utils.image.ImageUtils;
 
@@ -26,7 +26,7 @@ import butterknife.BindView;
 
 import static com.hy.upknowledge.Constant.DISCOVERY_KEY;
 import static com.hy.upknowledge.Constant.HORIZONTALSCROLLCARD;
-import static com.hy.upknowledge.Constant.SQUARECARDCOLLECTION;
+import static com.hy.upknowledge.Constant.SQUARE_CARD_COLLECTION;
 import static com.hy.upknowledge.Constant.VIDEO_TYPE;
 
 /**
@@ -115,12 +115,12 @@ public class DiscoveryHotFragment extends BaseFragment implements DiscoveryHotVi
                     ImageUtils.getInstances().glideAsBitmap(getActivity(),
                               dhHorizontalScrollCardBean.getItemList().get(0).getData().getImage(), banner);
                }
-               if (discoveryHot.getItemList().get(i).getType().equals(SQUARECARDCOLLECTION)) {
+               if (discoveryHot.getItemList().get(i).getType().equals(SQUARE_CARD_COLLECTION)) {
                     JsonObject jsonObject = discoveryHot.getItemList().get(i).getData();
                     SquareCardCollBean squareCardCollBean = new Gson().fromJson(jsonObject,
                               SquareCardCollBean.class);
                     squareCardColl.setText(squareCardCollBean.getHeader().getTitle());
-                    for (int j = 0; j < squareCardCollBean.getItemList().size(); j++) {
+                    for (int j = 0; j < squareCardCollBean.getCount(); j++) {
                          JsonObject jsonListObject = squareCardCollBean.getItemList().get(j).getData();
                          SquareCardBean squareCardBean = new Gson().fromJson(jsonListObject, SquareCardBean.class);
                          squareCardAdapter.add(squareCardBean);
@@ -137,8 +137,8 @@ public class DiscoveryHotFragment extends BaseFragment implements DiscoveryHotVi
                     selectedVideo4FindAdapter.add(videoBean);
                }
           }
+          video4Find2ReleaseAdapter.clear();
           for (int i = 7; i < discoveryHot.getCount(); i++) {
-               video4Find2ReleaseAdapter.clear();
                if (discoveryHot.getItemList().get(i).getType().equals(VIDEO_TYPE)) {
                     JsonObject jsonObject = discoveryHot.getItemList().get(i).getData();
                     HotVideoBean videoBean = new Gson().fromJson(

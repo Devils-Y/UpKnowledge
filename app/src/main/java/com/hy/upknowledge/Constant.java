@@ -48,5 +48,15 @@ public class Constant {
      /**
       * 数据类型为squareCardCollection
       */
-     public static final String SQUARECARDCOLLECTION = "squareCardCollection";
+     public static final String SQUARE_CARD_COLLECTION = "squareCardCollection";
+
+     /**
+      * 数据类型为bannerCollection
+      */
+     public static final String BANNER_COLLECTION = "bannerCollection";
+
+     /**
+      * 数据类型为videoCollectionOfHorizontalScrollCard
+      */
+     public static final String VIDEO_COLL_HORIZONTAL = "videoCollectionOfHorizontalScrollCard";
 }

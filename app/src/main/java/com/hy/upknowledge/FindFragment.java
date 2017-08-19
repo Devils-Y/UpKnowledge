@@ -49,6 +49,10 @@ public class FindFragment extends BaseFragment implements DiscoveryView {
      DiscoveryAdapter discoveryAdapter;
      UserProgressDialog userProgressDialog;
 
+     DiscoveryHotFragment discoveryHotFragment;
+     DiscoveryCategoryFragment discoveryCategoryFragment;
+     DiscoveryAuthorFragment discoveryAuthorFragment;
+
      @Override
      protected int layoutId() {
           return R.layout.fragment_find;
@@ -108,17 +112,17 @@ public class FindFragment extends BaseFragment implements DiscoveryView {
                Bundle bundle = new Bundle();
                if (list.get(position).getName().equals(DISCOVERY_HOT)) {
                     bundle.putString(DISCOVERY_KEY, list.get(position).getApiUrl());
-                    DiscoveryHotFragment discoveryHotFragment = new DiscoveryHotFragment();
+                    discoveryHotFragment = new DiscoveryHotFragment();
                     discoveryHotFragment.setArguments(bundle);
                     return discoveryHotFragment;
                } else if (list.get(position).getName().equals(DISCOVERY_CATEGORY)) {
                     bundle.putString(DISCOVERY_KEY, list.get(position).getApiUrl());
-                    DiscoveryCategoryFragment discoveryCategoryFragment = new DiscoveryCategoryFragment();
+                    discoveryCategoryFragment = new DiscoveryCategoryFragment();
                     discoveryCategoryFragment.setArguments(bundle);
                     return discoveryCategoryFragment;
                } else if (list.get(position).getName().equals(DISCOVERY_PGCS)) {
                     bundle.putString(DISCOVERY_KEY, list.get(position).getApiUrl());
-                    DiscoveryAuthorFragment discoveryAuthorFragment = new DiscoveryAuthorFragment();
+                    discoveryAuthorFragment = new DiscoveryAuthorFragment();
                     discoveryAuthorFragment.setArguments(bundle);
                     return discoveryAuthorFragment;
                }

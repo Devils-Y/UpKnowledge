@@ -1,19 +1,19 @@
-package com.hy.upknowledge.discovery.category;
+package com.hy.upknowledge.discovery.author;
 
 import com.google.gson.JsonObject;
 
 import java.util.List;
 
 /**
- * Created by huyin on 2017/8/17.
+ * Created by huyin on 2017/8/18.
  */
 
-public class DiscoveryCategoryResult {
+public class DiscoveryAuthorResult {
 
      private int count;
      private int total;
      private String nextPageUrl;
-     private List<ItemListBeanX> itemList;
+     private List<ItemListBean> itemList;
 
      public int getCount() {
           return count;
@@ -39,15 +39,15 @@ public class DiscoveryCategoryResult {
           this.nextPageUrl = nextPageUrl;
      }
 
-     public List<ItemListBeanX> getItemList() {
+     public List<ItemListBean> getItemList() {
           return itemList;
      }
 
-     public void setItemList(List<ItemListBeanX> itemList) {
+     public void setItemList(List<ItemListBean> itemList) {
           this.itemList = itemList;
      }
 
-     public static class ItemListBeanX {
+     public static class ItemListBean {
 
           private String type;
           private JsonObject data;

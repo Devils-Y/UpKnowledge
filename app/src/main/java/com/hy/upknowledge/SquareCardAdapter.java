@@ -1,11 +1,12 @@
 package com.hy.upknowledge;
 
 import android.content.Context;
+import android.graphics.drawable.ColorDrawable;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.hy.upknowledge.discovery.hot.bean.SquareCardBean;
+import com.hy.upknowledge.bean.SquareCardBean;
 import com.hy.upknowledge.quickopen.base.BaseAdapter;
 import com.hy.upknowledge.quickopen.base.BaseViewHolder;
 import com.hy.upknowledge.quickopen.utils.image.ImageUtils;
@@ -30,12 +31,17 @@ public class SquareCardAdapter extends BaseAdapter<SquareCardBean> {
 
      @Override
      protected void convert(BaseViewHolder holder, final SquareCardBean item, int position) {
+          if (item.getTitle() != null) {
+               holder.setText(R.id.title, item.getTitle());
+          }
           holder.setImageUrl(R.id.image, new BaseViewHolder.HolderImage(item.getImage()) {
                @Override
                public void loadImg(ImageView imageView, String url) {
                     ImageUtils.getInstances().glideOBJContext(mContext, url, imageView);
                }
           });
+//          ImageView imageView = holder.getView(R.id.image);
+//          imageView.setImageDrawable(new ColorDrawable(R.color.half_black));
           holder.getView(R.id.image).setOnClickListener(new View.OnClickListener() {
                @Override
                public void onClick(View view) {

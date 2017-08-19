@@ -1,4 +1,4 @@
-package com.hy.upknowledge.discovery.hot.bean;
+package com.hy.upknowledge.bean;
 
 import java.util.List;
 

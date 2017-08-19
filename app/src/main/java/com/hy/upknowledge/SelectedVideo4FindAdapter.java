@@ -5,7 +5,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 
-import com.hy.upknowledge.discovery.hot.bean.HotVideoBean;
+import com.hy.upknowledge.bean.HotVideoBean;
 import com.hy.upknowledge.quickopen.base.BaseAdapter;
 import com.hy.upknowledge.quickopen.base.BaseViewHolder;
 import com.hy.upknowledge.quickopen.utils.image.ImageUtils;
@@ -42,12 +42,15 @@ public class SelectedVideo4FindAdapter extends BaseAdapter<HotVideoBean> {
                     }
                });
           } else {
-               holder.setImageUrl(R.id.author_icon, new BaseViewHolder.HolderImage(item.getAuthor().getIcon()) {
-                    @Override
-                    public void loadImg(ImageView imageView, String url) {
-                         ImageUtils.getInstances().glide2Circle(mContext, url, imageView);
-                    }
-               });
+               if(item.getAuthor().getIcon() != null
+                         && !item.getAuthor().getIcon().equals("")){
+                    holder.setImageUrl(R.id.author_icon, new BaseViewHolder.HolderImage(item.getAuthor().getIcon()) {
+                         @Override
+                         public void loadImg(ImageView imageView, String url) {
+                              ImageUtils.getInstances().glide2Circle(mContext, url, imageView);
+                         }
+                    });
+               }
           }
           holder.setImageUrl(R.id.image, new BaseViewHolder.HolderImage(item.getCover().getFeed()) {
                @Override

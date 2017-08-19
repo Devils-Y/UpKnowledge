@@ -61,6 +61,9 @@ public abstract class BaseFragment extends Fragment {
       */
      protected abstract void initData();
 
+     /**
+      * 视图销毁的时候讲Fragment是否初始化的状态变为false
+      */
      @Override
      public void onDestroyView() {
           super.onDestroyView();

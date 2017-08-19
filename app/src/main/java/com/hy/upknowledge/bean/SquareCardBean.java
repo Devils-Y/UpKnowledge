@@ -1,4 +1,4 @@
-package com.hy.upknowledge.discovery.hot.bean;
+package com.hy.upknowledge.bean;
 
 /**
  * Created by huyin on 2017/8/17.

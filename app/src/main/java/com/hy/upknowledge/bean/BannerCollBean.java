@@ -1,15 +1,17 @@
-package com.hy.upknowledge.discovery.hot.bean;
+package com.hy.upknowledge.bean;
 
 import java.util.List;
 
 /**
- * Created by huyin on 2017/8/16.
+ * Created by huyin on 2017/8/18.
  */
 
-public class HorizontalScrollCardBean {
+public class BannerCollBean {
 
      private String dataType;
+     private HeaderBean header;
      private int count;
+     private Object adTrack;
      private List<ItemListBean> itemList;
 
      public String getDataType() {
@@ -20,6 +22,14 @@ public class HorizontalScrollCardBean {
           this.dataType = dataType;
      }
 
+     public HeaderBean getHeader() {
+          return header;
+     }
+
+     public void setHeader(HeaderBean header) {
+          this.header = header;
+     }
+
      public int getCount() {
           return count;
      }
@@ -28,12 +38,96 @@ public class HorizontalScrollCardBean {
           this.count = count;
      }
 
+     public Object getAdTrack() {
+          return adTrack;
+     }
+
+     public void setAdTrack(Object adTrack) {
+          this.adTrack = adTrack;
+     }
+
      public List<ItemListBean> getItemList() {
           return itemList;
      }
 
      public void setItemList(List<ItemListBean> itemList) {
           this.itemList = itemList;
+     }
+
+     public static class HeaderBean {
+          /**
+           * id : 4
+           * title : 热门专题
+           * font : bold
+           * cover : null
+           * label : null
+           * actionUrl : eyepetizer://campaign/list/?title=%E4%B8%93%E9%A2%98
+           * labelList : null
+           */
+
+          private int id;
+          private String title;
+          private String font;
+          private Object cover;
+          private Object label;
+          private String actionUrl;
+          private Object labelList;
+
+          public int getId() {
+               return id;
+          }
+
+          public void setId(int id) {
+               this.id = id;
+          }
+
+          public String getTitle() {
+               return title;
+          }
+
+          public void setTitle(String title) {
+               this.title = title;
+          }
+
+          public String getFont() {
+               return font;
+          }
+
+          public void setFont(String font) {
+               this.font = font;
+          }
+
+          public Object getCover() {
+               return cover;
+          }
+
+          public void setCover(Object cover) {
+               this.cover = cover;
+          }
+
+          public Object getLabel() {
+               return label;
+          }
+
+          public void setLabel(Object label) {
+               this.label = label;
+          }
+
+          public String getActionUrl() {
+               return actionUrl;
+          }
+
+          public void setActionUrl(String actionUrl) {
+               this.actionUrl = actionUrl;
+          }
+
+          public Object getLabelList() {
+               return labelList;
+          }
+
+          public void setLabelList(Object labelList) {
+               this.labelList = labelList;
+          }
      }
 
      public static class ItemListBean {
@@ -77,7 +171,7 @@ public class HorizontalScrollCardBean {
                private Object adTrack;
                private boolean shade;
                private LabelBean label;
-               private HeaderBean header;
+               private Object header;
                private List<?> labelList;
 
                public String getDataType() {
@@ -152,11 +246,11 @@ public class HorizontalScrollCardBean {
                     this.label = label;
                }
 
-               public HeaderBean getHeader() {
+               public Object getHeader() {
                     return header;
                }
 
-               public void setHeader(HeaderBean header) {
+               public void setHeader(Object header) {
                     this.header = header;
                }
 
@@ -196,91 +290,6 @@ public class HorizontalScrollCardBean {
 
                     public void setDetail(Object detail) {
                          this.detail = detail;
-                    }
-               }
-
-               public static class HeaderBean {
-
-                    private int id;
-                    private Object title;
-                    private Object font;
-                    private Object cover;
-                    private Object label;
-                    private Object actionUrl;
-                    private Object labelList;
-                    private Object icon;
-                    private Object description;
-
-                    public int getId() {
-                         return id;
-                    }
-
-                    public void setId(int id) {
-                         this.id = id;
-                    }
-
-                    public Object getTitle() {
-                         return title;
-                    }
-
-                    public void setTitle(Object title) {
-                         this.title = title;
-                    }
-
-                    public Object getFont() {
-                         return font;
-                    }
-
-                    public void setFont(Object font) {
-                         this.font = font;
-                    }
-
-                    public Object getCover() {
-                         return cover;
-                    }
-
-                    public void setCover(Object cover) {
-                         this.cover = cover;
-                    }
-
-                    public Object getLabel() {
-                         return label;
-                    }
-
-                    public void setLabel(Object label) {
-                         this.label = label;
-                    }
-
-                    public Object getActionUrl() {
-                         return actionUrl;
-                    }
-
-                    public void setActionUrl(Object actionUrl) {
-                         this.actionUrl = actionUrl;
-                    }
-
-                    public Object getLabelList() {
-                         return labelList;
-                    }
-
-                    public void setLabelList(Object labelList) {
-                         this.labelList = labelList;
-                    }
-
-                    public Object getIcon() {
-                         return icon;
-                    }
-
-                    public void setIcon(Object icon) {
-                         this.icon = icon;
-                    }
-
-                    public Object getDescription() {
-                         return description;
-                    }
-
-                    public void setDescription(Object description) {
-                         this.description = description;
                     }
                }
           }

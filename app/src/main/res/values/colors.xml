@@ -11,4 +11,5 @@
      <color name="white">#FFF</color>
      <color name="black">#000</color>
      <color name="hint_of_red">#F9F9F9</color>
+     <color name="half_black">#90000000</color>
 </resources>

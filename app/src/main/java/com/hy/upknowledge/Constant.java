@@ -59,4 +59,14 @@ public class Constant {
       * 数据类型为videoCollectionOfHorizontalScrollCard
       */
      public static final String VIDEO_COLL_HORIZONTAL = "videoCollectionOfHorizontalScrollCard";
+
+     /**
+      * 数据类型为briefCard
+      */
+     public static final String BRIEFCARD = "briefCard";
+
+     /**
+      * 数据类型为videoCollectionWithBrief
+      */
+     public static final String VIDEO_COLL_BRIEF = "videoCollectionWithBrief";
 }

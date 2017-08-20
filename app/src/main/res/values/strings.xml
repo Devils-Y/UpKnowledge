@@ -11,4 +11,6 @@
      <string name="recently_popular_txt">Recently Popular</string>
      <string name="popular_ranking_txt">Popular Ranking</string>
      <string name="latest_release_txt">Latest Release</string>
+     <string name="hot_author_txt">Hot Author</string>
+     <string name="lately_update_author_txt">Lately Update Author</string>
 </resources>

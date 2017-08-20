@@ -11,4 +11,6 @@
      <string name="recently_popular_txt">近 期 热 门</string>
      <string name="popular_ranking_txt">热 门 排 行</string>
      <string name="latest_release_txt">最 新 发 布</string>
+     <string name="hot_author_txt">热 门 作 者</string>
+     <string name="lately_update_author_txt">最 近 更 新 作 者</string>
 </resources>

@@ -44,12 +44,15 @@ public class SelectedVideo4HomeAdapter extends BaseAdapter<SelectedVideoBean> {
                     }
                });
           } else {
-               holder.setImageUrl(R.id.author_icon, new BaseViewHolder.HolderImage(item.getAuthor().getIcon()) {
-                    @Override
-                    public void loadImg(ImageView imageView, String url) {
-                         ImageUtils.getInstances().glide2Circle(mContext, url, imageView);
-                    }
-               });
+               if (item.getAuthor() != null && item.getAuthor().getIcon() != null
+                         && !item.getAuthor().getIcon().equals("")) {
+                    holder.setImageUrl(R.id.author_icon, new BaseViewHolder.HolderImage(item.getAuthor().getIcon()) {
+                         @Override
+                         public void loadImg(ImageView imageView, String url) {
+                              ImageUtils.getInstances().glide2Circle(mContext, url, imageView);
+                         }
+                    });
+               }
           }
           holder.setImageUrl(R.id.image, new BaseViewHolder.HolderImage(item.getCover().getFeed()) {
                @Override

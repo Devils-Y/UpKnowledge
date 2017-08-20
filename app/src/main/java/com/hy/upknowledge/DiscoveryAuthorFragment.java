@@ -1,15 +1,24 @@
 package com.hy.upknowledge;
 
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 import android.widget.TextView;
 
+import com.google.gson.Gson;
+import com.google.gson.JsonObject;
+import com.hy.upknowledge.bean.BriefCardBean;
 import com.hy.upknowledge.discovery.author.DiscoveryAuthorPresenter;
 import com.hy.upknowledge.discovery.author.DiscoveryAuthorResult;
 import com.hy.upknowledge.discovery.author.DiscoveryAuthorView;
 import com.hy.upknowledge.quickopen.base.BaseFragment;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import butterknife.BindView;
 
+import static com.hy.upknowledge.Constant.BRIEFCARD;
 import static com.hy.upknowledge.Constant.DISCOVERY_KEY;
 
 /**
@@ -18,16 +27,20 @@ import static com.hy.upknowledge.Constant.DISCOVERY_KEY;
 
 public class DiscoveryAuthorFragment extends BaseFragment implements DiscoveryAuthorView {
 
-     @BindView(R.id.text)
-     TextView text;
+     @BindView(R.id.hotAuthor)
+     TextView hotAuthor;
+     @BindView(R.id.hotAuthorRecyclerView)
+     RecyclerView hotAuthorRecyclerView;
 
      String url;
 
      DiscoveryAuthorPresenter discoveryAuthorPresenter;
 
-
      private static final int PAGE_NUM = 10;
      private int PAGE = 0;
+
+     List<BriefCardBean> briefCardBeen = new ArrayList<>();
+     HotAuthorAdapter hotAuthorAdapter;
 
      @Override
      protected int layoutId() {
@@ -38,6 +51,10 @@ public class DiscoveryAuthorFragment extends BaseFragment implements DiscoveryAu
      protected void initView() {
           url = getArguments().getString(DISCOVERY_KEY);
           discoveryAuthorPresenter = new DiscoveryAuthorPresenter(this);
+
+          hotAuthorAdapter = new HotAuthorAdapter(getActivity(), briefCardBeen);
+          hotAuthorRecyclerView.setLayoutManager(new NotRollGridLayoutManager(getActivity(), 3));
+          hotAuthorRecyclerView.setAdapter(hotAuthorAdapter);
      }
 
      @Override
@@ -52,7 +69,15 @@ public class DiscoveryAuthorFragment extends BaseFragment implements DiscoveryAu
 
      @Override
      public void setDiscoveryAuthor(DiscoveryAuthorResult discoveryAuthor) {
-          Log.e("Tag","discoveryAuthor----->-----"+discoveryAuthor.getItemList().get(2).getData());
+          Log.e("Tag", "discoveryAuthor----->-----" + discoveryAuthor.getItemList().get(2).getData());
+          for (int i = 0; i < 4; i++) {
+               if (discoveryAuthor.getItemList().get(i).getData().equals(BRIEFCARD)) {
+                    hotAuthor.setVisibility(View.VISIBLE);
+                    JsonObject jsonObject = discoveryAuthor.getItemList().get(i).getData();
+                    BriefCardBean briefCardBean = new Gson().fromJson(jsonObject, BriefCardBean.class);
+                    hotAuthorAdapter.add(briefCardBean);
+               }
+          }
      }
 
      @Override

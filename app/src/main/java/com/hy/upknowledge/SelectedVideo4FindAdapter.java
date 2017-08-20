@@ -42,7 +42,7 @@ public class SelectedVideo4FindAdapter extends BaseAdapter<HotVideoBean> {
                     }
                });
           } else {
-               if(item.getAuthor().getIcon() != null
+               if(item.getAuthor() != null && item.getAuthor().getIcon() != null
                          && !item.getAuthor().getIcon().equals("")){
                     holder.setImageUrl(R.id.author_icon, new BaseViewHolder.HolderImage(item.getAuthor().getIcon()) {
                          @Override

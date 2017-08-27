@@ -13,4 +13,7 @@
      <string name="latest_release_txt">Latest Release</string>
      <string name="hot_author_txt">Hot Author</string>
      <string name="lately_update_author_txt">Lately Update Author</string>
+     <string name="had_follow_txt">Had Follow</string>
+     <string name="join_author_txt">Join Author</string>
+     <string name="all_author_txt">All Author</string>
 </resources>

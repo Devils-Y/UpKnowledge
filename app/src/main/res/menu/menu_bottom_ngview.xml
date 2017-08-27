@@ -10,10 +10,6 @@
           android:icon="@drawable/ic_local_play_blue_grey"
           android:title="@string/find_txt"/>
      <item
-          android:id="@+id/follow"
-          android:icon="@drawable/ic_local_offer_blue_grey"
-          android:title="@string/follow_txt"/>
-     <item
           android:id="@+id/mine"
           android:icon="@drawable/ic_face_blue_grey"
           android:title="@string/mine_txt"/>

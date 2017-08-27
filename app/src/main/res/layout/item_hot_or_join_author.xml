@@ -4,13 +4,13 @@
      android:layout_width="match_parent"
      android:layout_height="wrap_content"
      android:elevation="1dp"
-     android:translationZ="1dp"
-     android:orientation="vertical">
+     android:orientation="vertical"
+     android:translationZ="1dp">
 
      <ImageView
           android:id="@+id/authorIcon"
-          android:layout_width="80dp"
-          android:layout_height="80dp"
+          android:layout_width="50dp"
+          android:layout_height="50dp"
           android:layout_gravity="center"/>
 
      <TextView
@@ -18,11 +18,12 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          android:ellipsize="end"
           android:gravity="center"
           android:padding="5dp"
-          android:text="@string/lately_update_author_txt"
+          android:singleLine="true"
           android:textColor="@color/mine_shaft"
-          android:textSize="15sp"
+          android:textSize="13sp"
           android:textStyle="bold"/>
 
      <TextView
@@ -30,20 +31,10 @@
           android:layout_width="wrap_content"
           android:layout_height="wrap_content"
           android:layout_gravity="center"
+          android:ellipsize="end"
           android:gravity="center"
           android:padding="5dp"
-          android:text="@string/lately_update_author_txt"
-          android:textColor="@color/mine_shaft"
-          android:textSize="15sp"/>
-
-     <Button
-          android:id="@+id/followBtn"
-          android:layout_width="wrap_content"
-          android:layout_height="wrap_content"
-          android:background="@drawable/shape_stack_boder"
-          android:layout_gravity="center"
-          android:text="@string/follow_txt"
-          android:padding="5dp"
+          android:singleLine="true"
           android:textColor="@color/mine_shaft"
           android:textSize="13sp"/>
 

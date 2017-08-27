@@ -13,4 +13,7 @@
      <string name="latest_release_txt">最 新 发 布</string>
      <string name="hot_author_txt">热 门 作 者</string>
      <string name="lately_update_author_txt">最 近 更 新 作 者</string>
+     <string name="had_follow_txt">已关注</string>
+     <string name="join_author_txt">合 作 作 者</string>
+     <string name="all_author_txt">全 部 作 者</string>
 </resources>

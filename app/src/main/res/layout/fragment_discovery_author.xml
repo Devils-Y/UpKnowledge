@@ -27,6 +27,14 @@
                android:layout_width="match_parent"
                android:layout_height="wrap_content"/>
 
+          <View
+               android:layout_marginTop="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="1px"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:background="@color/iron"/>
+
           <TextView
                android:id="@+id/lately_update_author"
                android:layout_width="match_parent"
@@ -39,6 +47,55 @@
                android:textSize="15sp"
                android:text="@string/lately_update_author_txt"
                android:textStyle="bold"/>
+
+          <android.support.v7.widget.RecyclerView
+               android:id="@+id/latelyUpdateRecyclerView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+          <View
+               android:layout_marginTop="10dp"
+               android:layout_width="match_parent"
+               android:layout_height="1px"
+               android:layout_marginLeft="10dp"
+               android:layout_marginRight="10dp"
+               android:background="@color/iron"/>
+
+          <TextView
+               android:id="@+id/join_author"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/white"
+               android:gravity="center"
+               android:padding="15dp"
+               android:visibility="gone"
+               android:textColor="@color/mine_shaft"
+               android:textSize="15sp"
+               android:text="@string/join_author_txt"
+               android:textStyle="bold"/>
+
+          <android.support.v7.widget.RecyclerView
+               android:id="@+id/joinAuthorRecyclerView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
+
+          <TextView
+               android:id="@+id/allAuthor"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"
+               android:background="@color/white"
+               android:gravity="center"
+               android:padding="15dp"
+               android:visibility="gone"
+               android:textColor="@color/mine_shaft"
+               android:textSize="15sp"
+               android:text="@string/all_author_txt"
+               android:textStyle="bold"/>
+
+          <android.support.v7.widget.RecyclerView
+               android:id="@+id/allAuthorRecyclerView"
+               android:layout_width="match_parent"
+               android:layout_height="wrap_content"/>
 
      </LinearLayout>
 </android.support.v4.widget.NestedScrollView>

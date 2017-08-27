@@ -19,7 +19,7 @@ public abstract class BasePagerAdapter<T> extends PagerAdapter {
 
      private int layoutId;
 
-     private List<T> mPager;
+     protected List<T> mPager;
 
      private ViewPager viewPager;
 

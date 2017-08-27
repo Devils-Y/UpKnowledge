@@ -19,7 +19,6 @@ public class MainActivity extends BaseActivity {
 
      HomeFragment homeFragment;
      FindFragment findFragment;
-     FollowFragment followFragment;
      MineFragment mineFragment;
      FragmentManager fragmentManager;
      FragmentTransaction fragmentTransaction;
@@ -67,9 +66,6 @@ public class MainActivity extends BaseActivity {
                                    case R.id.find:
                                         toFindFragment();
                                         break;
-                                   case R.id.follow:
-                                        toFollowFragment();
-                                        break;
                                    case R.id.mine:
                                         toMineFragment();
                                         break;
@@ -85,9 +81,6 @@ public class MainActivity extends BaseActivity {
           }
           if (findFragment != null) {
                fragmentTransaction.hide(findFragment);
-          }
-          if (followFragment != null) {
-               fragmentTransaction.hide(followFragment);
           }
           if (mineFragment != null) {
                fragmentTransaction.hide(mineFragment);
@@ -110,16 +103,6 @@ public class MainActivity extends BaseActivity {
                fragmentTransaction.add(R.id.container, findFragment);
           } else {
                fragmentTransaction.show(findFragment);
-          }
-          fragmentTransaction.commit();
-     }
-
-     private void toFollowFragment() {
-          if (followFragment == null) {
-               followFragment = new FollowFragment();
-               fragmentTransaction.add(R.id.container, followFragment);
-          } else {
-               fragmentTransaction.show(followFragment);
           }
           fragmentTransaction.commit();
      }

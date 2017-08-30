@@ -1,10 +1,12 @@
 package com.hy.upknowledge;
 
 import android.content.Context;
+import android.view.View;
 import android.widget.ImageView;
 
 import com.hy.upknowledge.bean.SelectedVideoBean;
 import com.hy.upknowledge.quickopen.utils.image.ImageUtils;
+import com.hy.upknowledge.quickopen.utils.toast.ToastUtils;
 
 import java.util.List;
 
@@ -32,6 +34,12 @@ public class SelectedPagerAdapter extends BasePagerAdapter<SelectedVideoBean> {
                @Override
                public void loadImg(ImageView imageView, String url) {
                     ImageUtils.getInstances().glideOBJContext(mContext, url, imageView);
+               }
+          });
+          holder.getView(R.id.image).setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                    ToastUtils.toast(mContext,item.getWebUrl().getRaw());
                }
           });
      }

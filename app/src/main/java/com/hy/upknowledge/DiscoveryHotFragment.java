@@ -1,8 +1,10 @@
 package com.hy.upknowledge;
 
+import android.content.Intent;
 import android.support.v4.widget.NestedScrollView;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -16,6 +18,7 @@ import com.hy.upknowledge.bean.SquareCardCollBean;
 import com.hy.upknowledge.discovery.hot.DiscoveryHotPresenter;
 import com.hy.upknowledge.discovery.hot.DiscoveryHotResult;
 import com.hy.upknowledge.discovery.hot.DiscoveryHotView;
+import com.hy.upknowledge.http.API;
 import com.hy.upknowledge.quickopen.base.BaseFragment;
 import com.hy.upknowledge.quickopen.utils.image.ImageUtils;
 
@@ -24,6 +27,7 @@ import java.util.List;
 
 import butterknife.BindView;
 
+import static com.hy.upknowledge.Constant.DETAIL_kEY;
 import static com.hy.upknowledge.Constant.DISCOVERY_KEY;
 import static com.hy.upknowledge.Constant.HORIZONTALSCROLLCARD;
 import static com.hy.upknowledge.Constant.SQUARE_CARD_COLLECTION;
@@ -110,10 +114,20 @@ public class DiscoveryHotFragment extends BaseFragment implements DiscoveryHotVi
           for (int i = 0; i < discoveryHot.getCount(); i++) {
                if (discoveryHot.getItemList().get(i).getType().equals(HORIZONTALSCROLLCARD)) {
                     JsonObject jsonObject = discoveryHot.getItemList().get(i).getData();
-                    HorizontalScrollCardBean dhHorizontalScrollCardBean =
+                    final HorizontalScrollCardBean dhHorizontalScrollCardBean =
                               new Gson().fromJson(jsonObject, HorizontalScrollCardBean.class);
                     ImageUtils.getInstances().glideAsBitmap(getActivity(),
                               dhHorizontalScrollCardBean.getItemList().get(0).getData().getImage(), banner);
+                    banner.setOnClickListener(new View.OnClickListener() {
+                         @Override
+                         public void onClick(View view) {
+                              Intent intent = new Intent(getActivity(), DetailActivity.class);
+                              intent.putExtra(DETAIL_kEY, API.KAIYAN_HEAD_URL +
+                                        dhHorizontalScrollCardBean.getItemList().get(0)
+                                                  .getData().getActionUrl());
+                              getActivity().startActivity(intent);
+                         }
+                    });
                }
                if (discoveryHot.getItemList().get(i).getType().equals(SQUARE_CARD_COLLECTION)) {
                     JsonObject jsonObject = discoveryHot.getItemList().get(i).getData();

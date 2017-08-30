@@ -40,9 +40,13 @@
 
           <TextView
                android:id="@+id/profile"
-               android:layout_width="wrap_content"
+               android:layout_width="match_parent"
                android:layout_height="wrap_content"
+               android:layout_toLeftOf="@+id/collection"
+               android:ellipsize="end"
+               android:gravity="left"
                android:paddingLeft="20dp"
+               android:singleLine="true"
                android:textColor="@color/stack"
                android:textSize="13sp"/>
 
@@ -51,9 +55,9 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginRight="20dp"
+               android:layout_toLeftOf="@+id/share"
                android:drawableLeft="@drawable/ic_favorite_border"
                android:drawablePadding="5dp"
-               android:layout_toLeftOf="@+id/share"
                android:textColor="@color/stack"
                android:textSize="13sp"/>
 
@@ -62,9 +66,9 @@
                android:layout_width="wrap_content"
                android:layout_height="wrap_content"
                android:layout_marginRight="20dp"
+               android:layout_toLeftOf="@+id/more"
                android:drawableLeft="@drawable/ic_share"
                android:drawablePadding="5dp"
-               android:layout_toLeftOf="@+id/more"
                android:textColor="@color/stack"
                android:textSize="13sp"/>
 

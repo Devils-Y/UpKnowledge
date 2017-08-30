@@ -46,6 +46,7 @@ public class DiscoveryCategoryFragment extends BaseFragment implements Discovery
 
      String url;
 
+     UserProgressDialog userProgressDialog;
      DiscoveryCategoryPresenter discoveryCategoryPresenter;
      private static final int PAGE_NUM = 4;
      private int PAGE = 0;
@@ -85,12 +86,15 @@ public class DiscoveryCategoryFragment extends BaseFragment implements Discovery
 
      @Override
      protected void initData() {
+          userProgressDialog = new UserProgressDialog(getActivity());
+          userProgressDialog.show();
           discoveryCategoryPresenter.getDiscoveryCategory(url, PAGE, PAGE_NUM);
      }
 
      @Override
      protected void DestroyView() {
-
+          userProgressDialog = null;
+          discoveryCategoryPresenter.onDestroy();
      }
 
      @Override
@@ -123,6 +127,9 @@ public class DiscoveryCategoryFragment extends BaseFragment implements Discovery
                               VideoCollHorizontalBean.class);
                     videoCollHorizontalAdapter.add(videoCollHorizontalBean);
                }
+          }
+          if (userProgressDialog != null) {
+               userProgressDialog.dismiss();
           }
      }
 

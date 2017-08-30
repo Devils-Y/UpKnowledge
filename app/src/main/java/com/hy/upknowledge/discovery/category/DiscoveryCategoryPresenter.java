@@ -36,7 +36,7 @@ public class DiscoveryCategoryPresenter implements HttpListener<DiscoveryCategor
           }
      }
 
-     public void onDestory() {
+     public void onDestroy() {
           if (discoveryCategoryView != null) {
                discoveryCategoryView = null;
           }

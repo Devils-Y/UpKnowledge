@@ -1,6 +1,7 @@
 package com.hy.upknowledge;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.Resources;
 import android.support.v7.widget.RecyclerView;
 import android.util.DisplayMetrics;
@@ -15,6 +16,8 @@ import com.hy.upknowledge.quickopen.utils.image.ImageUtils;
 import com.hy.upknowledge.util.TimeUtil;
 
 import java.util.List;
+
+import static com.hy.upknowledge.Constant.DETAIL_kEY;
 
 /**
  * Created by huyin on 2017/8/14.
@@ -39,7 +42,7 @@ public class CollCoverAdapter extends BaseAdapter<SelectedCollCoverBean.ItemList
      }
 
      @Override
-     protected void convert(BaseViewHolder holder, SelectedCollCoverBean.ItemListBean.DataBean item, int position) {
+     protected void convert(BaseViewHolder holder, final SelectedCollCoverBean.ItemListBean.DataBean item, int position) {
           holder.setText(R.id.title, item.getTitle())
                     .setText(R.id.category_time, new StringBuilder().append("#")
                               .append(item.getCategory()).append("\t\t/\t\t")
@@ -49,6 +52,15 @@ public class CollCoverAdapter extends BaseAdapter<SelectedCollCoverBean.ItemList
                @Override
                public void loadImg(ImageView imageView, String url) {
                     ImageUtils.getInstances().glideOBJContext(mContext, url, imageView);
+               }
+          });
+
+          holder.getView(R.id.image).setOnClickListener(new View.OnClickListener() {
+               @Override
+               public void onClick(View view) {
+                    Intent intent = new Intent(mContext, DetailActivity.class);
+                    intent.putExtra(DETAIL_kEY, item.getWebUrl().getRaw());
+                    mContext.startActivity(intent);
                }
           });
      }

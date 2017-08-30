@@ -69,4 +69,9 @@ public class Constant {
       * 数据类型为videoCollectionWithBrief
       */
      public static final String VIDEO_COLL_BRIEF = "videoCollectionWithBrief";
+
+     /**
+      * 详情的url
+      */
+     public static final String DETAIL_kEY = "detail_key";
 }

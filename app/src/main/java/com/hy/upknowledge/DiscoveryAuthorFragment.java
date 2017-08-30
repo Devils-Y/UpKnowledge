@@ -47,6 +47,7 @@ public class DiscoveryAuthorFragment extends BaseFragment implements DiscoveryAu
 
      String url;
 
+     UserProgressDialog userProgressDialog;
      DiscoveryAuthorPresenter discoveryAuthorPresenter;
 
      private static final int PAGE_NUM = 10;
@@ -99,12 +100,15 @@ public class DiscoveryAuthorFragment extends BaseFragment implements DiscoveryAu
 
      @Override
      protected void initData() {
+          userProgressDialog = new UserProgressDialog(getActivity());
+          userProgressDialog.show();
           discoveryAuthorPresenter.getDiscoveryAuthor(url, PAGE, PAGE_NUM);
      }
 
      @Override
      protected void DestroyView() {
-
+          userProgressDialog = null;
+          discoveryAuthorPresenter.onDestroy();
      }
 
      @Override
@@ -140,6 +144,9 @@ public class DiscoveryAuthorFragment extends BaseFragment implements DiscoveryAu
                     BriefCardBean briefCardBean = new Gson().fromJson(jsonObject, BriefCardBean.class);
                     allAuthorAdapter.add(briefCardBean);
                }
+          }
+          if (userProgressDialog != null) {
+               userProgressDialog.dismiss();
           }
      }
 

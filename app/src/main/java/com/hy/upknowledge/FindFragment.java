@@ -82,15 +82,15 @@ public class FindFragment extends BaseFragment implements DiscoveryView {
 
      @Override
      public void setDiscovery(DiscoveryResult discovery) {
-          if (userProgressDialog != null) {
-               userProgressDialog.dismiss();
-          }
           for (int i = 0; i < discovery.getTabInfo().getTabList().size(); i++) {
                list.add(discovery.getTabInfo().getTabList().get(i));
           }
           discoveryAdapter = new DiscoveryAdapter(getChildFragmentManager(), list);
           pager.setAdapter(discoveryAdapter);
           tab.setupWithViewPager(pager);
+          if (userProgressDialog != null) {
+               userProgressDialog.dismiss();
+          }
      }
 
      @Override
